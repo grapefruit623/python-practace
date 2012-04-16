@@ -6,7 +6,6 @@ def main():
 	f = open(sys.argv[1], 'r')
 	w = f.read()
 	dic = {} 
-	count = 0
 	for s in re.findall('<DOC>[\s\S]*?</DOC>', w):
 		title = re.search('<DOCNO>(.*?)</DOCNO>', s)
 		docTitle = title.group(1)
@@ -23,9 +22,6 @@ def main():
 				else:
 					dic[s] = {}
 					dic[s][docTitle] = 1 
-		count += 1
-		print "-------"
-
 	for i in dic.keys():
 		print "%s " %i #( re.search('(.*)', i) ).group(1) )
 		for t in dic[i].keys():
