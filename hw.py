@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import re
-import sys
 
 def main():
 	f = open(sys.argv[1], 'r')
